@@ -11,6 +11,8 @@ import P1 from'./img/p1.png'
 import P2 from'./img/p2.png'
 import P3 from'./img/three.png'
 import Form from './components/form';
+import Bookmarks from './pages/Bookmarks';
+import { Provider } from 'jotai';
 
 function App() {
  const [datas,setDatas]=useState([ {
@@ -60,6 +62,7 @@ function App() {
 
   return (
     <>
+    <Provider>
        <Navbar addPost={addPost} />
        
        {/* <Home /> */}
@@ -67,11 +70,12 @@ function App() {
         <Route path="/" element={<Home datas={datas} />} />
         < Route path="blog/:id" element={<Details datas={datas} />} />
         <Route path="/form" element={<Form  />} />
+         <Route path="/bookmarks" element={<Bookmarks datas={datas} />} />
         {/* <Route path="/Bookmarks" element={<Bookmarks />} /> */}
         {/* <Route path="/blog/:id" element={<BlogDetails posts={posts} />} />
         <Route path="/edit/:id" element={<EditBlog posts={posts} updatePost={updatePost} />} /> */}
       </Routes>
-    
+    </Provider>
     </>
   )
 }
