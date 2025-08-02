@@ -1,4 +1,4 @@
-// EditPost.jsx
+
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ const EditPost = ({ datas, updatePost }) => {
         author: post.author,
         description: post.description,
         content: post.content,
-        url: post.img // Assuming the img is stored in the URL field
+        url: post.img 
       });
     }
   }, [id, datas]);
@@ -39,7 +39,7 @@ const EditPost = ({ datas, updatePost }) => {
       pro: values.url
     };
     updatePost(updatedPost);
-    navigate(`/blog/${id}`); // Redirect to the blog details page
+    navigate(`/blog/${id}`); 
   };
 
   return (

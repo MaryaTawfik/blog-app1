@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { useAtom } from 'jotai';
-import { bookmarksAtom } from '../atom';
+// import { useAtom } from 'jotai';
+// import { bookmarksAtom } from '../atom';
  import Liked from "../img/liked.png";
-// import { useNavigate } from 'react-router-dom';
 
-const Bookmarks = ({ datas }) => {
-  const [bookmarks] = useAtom(bookmarksAtom);
-  // const navigate = useNavigate();
+
+const Bookmarks = () => {
+  // const [bookmarks] = useAtom(bookmarksAtom);
+  
 
   
   const Blogs = localStorage.getItem("bookmarks")
@@ -38,12 +38,7 @@ console.log(bookmarkedBlogs.id)
             <img src={blog.img} />
             <p className="text-gray-600 mb-2"> {blog.content}</p>
             <p className="text-gray-600 mb-2"> {blog.description}</p>
-            {/* <button 
-              onClick={() => navigate(`/blog/${blog.id}`)} 
-              className="text-blue-500 underline"
-            >
-              View Details
-            </button> */}
+           
             </div>
           // </div>
         ))

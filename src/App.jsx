@@ -16,6 +16,7 @@ import Bookmarks from './pages/Bookmarks';
 import { Provider } from 'jotai';
 
 function App() {
+  
  const [datas, setDatas] = useState(() => {
   const saved = localStorage.getItem("blogPosts");
   return saved ? JSON.parse(saved) : [
@@ -61,7 +62,7 @@ function App() {
  
    })
    ;
-   const [bookmarkedPosts, setBookmarkedPosts] = useState(() => {
+   const [bookmarkedPosts] = useState(() => {
   const saved = localStorage.getItem("bookmarks");
   return saved ? JSON.parse(saved) : [];
 });
@@ -90,18 +91,14 @@ useEffect(() => {
     <Provider>
        <Navbar addPost={addPost} />
        
-       {/* <Home /> */}
-      {/* <Routes> */}
+     
 <Routes>
   <Route path="/" element={<Home datas={datas} />} />
   <Route path="blog/:id" element={<Details datas={datas} />} />
   <Route path="/edit/:id" element={<EditPost datas={datas} updatePost={updatePost} />} />
   <Route path="/bookmarks" element={<Bookmarks datas={datas} />} />
 </Routes>
-        {/* <Route path="/Bookmarks" element={<Bookmarks />} /> */}
-        {/* <Route path="/blog/:id" element={<BlogDetails posts={posts} />} />
-        <Route path="/edit/:id" element={<EditBlog posts={posts} updatePost={updatePost} />} /> */}
-      {/* </Routes> */}
+        
     </Provider>
     </>
   )

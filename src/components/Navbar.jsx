@@ -21,7 +21,7 @@ const Navbar = ({ addPost }) => {
         <button onClick={() => setFormDisplayed(true)}>Create Blog</button>
       </div>
 
-      {/* Form as a pop-up */}
+      
       {isFormDisplayed && (
   <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center z-50">
     <div className=" p-6 rounded shadow-lg w-full max-w-md mx-auto">

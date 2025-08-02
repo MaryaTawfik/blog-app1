@@ -59,11 +59,11 @@ const Home = ({ datas }) => {
           // </div>
         ))}
       </div>
-      <div className="flex justify-center items-center h-32">
+      {/* <div className="flex justify-center items-center h-32">
         <button className="bg-black text-white px-4 py-2 rounded">
           See More
         </button>
-      </div>
+      </div> */}
 
       <footer className="bg-black text-white flex flex-wrap flex-row justify-between w-auto">
         <p>Blog</p>
