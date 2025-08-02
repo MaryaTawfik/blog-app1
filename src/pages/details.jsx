@@ -14,9 +14,10 @@ const Details = ({ datas }) => {
   const [bookmarks, setBookmarks] = useAtom(bookmarksAtom); // Use the bookmarks atom
 const [bookmark,setBookmark]=useState([])
   useEffect(() => {
-    const found = datas.find((b) => b.id.toString() === id);
-    setDat(found);
-  }, [id, datas]);
+  const found = datas.find((b) => b.id === Number(id)); // Convert id to a number for comparison
+  setDat(found);
+  console.log("Found Data:", found);
+}, [id, datas]);
 
   const handleBookmark = () => {
     if (bookmarks.includes(dat.id)) {
@@ -72,7 +73,7 @@ const [bookmark,setBookmark]=useState([])
           <Link to="/" className="bg-gray-400 text-white p-2 rounded">
           Back
         </Link>
-        <button className="bg-yellow-500 text-white p-2 rounded">
+      <button className="bg-yellow-500 text-white p-2 rounded">
   <Link to={`/edit/${dat.id}`}>Edit</Link>
 </button>
         </div>

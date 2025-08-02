@@ -44,6 +44,7 @@ const Home = ({ datas }) => {
           // <div className="flex flex-row m-4">
 
           <Card
+          key={data.id}
             id={data.id}
             title={data.title}
             author={data.author}
