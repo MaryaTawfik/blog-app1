@@ -10,8 +10,9 @@ import Like from "../img/like.png";
 const Details = ({ datas }) => {
   const { id } = useParams();
   const [dat, setDat] = useState(null);
+  // const [currentbookmarks, setCurrentbookmarks] = useState(null);
   const [bookmarks, setBookmarks] = useAtom(bookmarksAtom); // Use the bookmarks atom
-
+const [bookmark,setBookmark]=useState([])
   useEffect(() => {
     const found = datas.find((b) => b.id.toString() === id);
     setDat(found);
@@ -21,10 +22,20 @@ const Details = ({ datas }) => {
     if (bookmarks.includes(dat.id)) {
       alert("It's already added."); 
     } else {
-      setBookmarks((currentbookmarks) => [...currentbookmarks, dat.id]);
+    //  const bookmarked=datas.filter((b)=>dat.includes(b.id))
+      setBookmark((currentbookmarks) => [...currentbookmarks, dat]);
+      console.log(bookmark)
+      // console.log(bookmarked)
       alert("Added to bookmarks!"); 
+      
+      
     }
   };
+  
+   
+  useEffect(() => {
+  localStorage.setItem("bookmarks", JSON.stringify(bookmark));
+}, [bookmark]);
 
   if (!dat)
     return <p className="text-center py-10 text-gray-500">Post not found.</p>;
@@ -61,6 +72,9 @@ const Details = ({ datas }) => {
           <Link to="/" className="bg-gray-400 text-white p-2 rounded">
           Back
         </Link>
+        <button className="bg-yellow-500 text-white p-2 rounded">
+  <Link to={`/edit/${dat.id}`}>Edit</Link>
+</button>
         </div>
       </div>
     </div>

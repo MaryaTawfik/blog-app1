@@ -10,8 +10,9 @@ const Bookmarks = ({ datas }) => {
   // const navigate = useNavigate();
 
   
-  const bookmarkedBlogs = datas.filter((data) => bookmarks.includes(data.id));
-
+  const Blogs = localStorage.getItem("bookmarks")
+  const bookmarkedBlogs=JSON.parse(Blogs)
+console.log(bookmarkedBlogs.id)
   return (
     <div>
      <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-900 to-black text-left mb-6 drop-shadow-lg pl-[1em]">

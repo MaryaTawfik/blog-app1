@@ -19,17 +19,25 @@ const Home = ({ datas }) => {
           paddingLeft: "5em",
         }}
       >
-        <h1 className="text-[2rem]">Breaking into Product Design:</h1>
-        <h2 className="text-[2rem]">Advice from Untitled Founder, Frankie</h2>
-        <p className="text-[1.1rem]">
-          Let’s get one thing out of the way:
-          <br />
-          you don’t need a fancy Bachelor’s Degree to get into Product Design.{" "}
-          <br />
-          We sat down with Frankie Sallivan to talk about gatekeeping in product
-          design <br />
-          and who anyone can get into this growing industry.
-        </p>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white drop-shadow-lg mb-4">
+  Breaking into Product Design:
+</h1>
+
+<h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-6">
+  Advice from Untitled Founder, Frankie
+</h2>
+
+<p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-4xl">
+  Let’s get one thing out of the way:
+  <br />
+  you don’t need a fancy Bachelor’s Degree to get into Product Design.
+  <br />
+  We sat down with Frankie Sallivan to talk about gatekeeping in product design
+  <br />
+  and how anyone can get into this growing industry.
+</p>
+
+
       </div>
       <div className="flex flex-row flex-wrap m-4 ">
         {datas.map((data) => (
@@ -41,7 +49,7 @@ const Home = ({ datas }) => {
             author={data.author}
             description={data.description}
             content={data.content}
-            createdAt={data.createdAt}
+           createdAt={data.createdAt}
             editedAt={data.editedAt}
             img={data.img}
             name={data.name}
