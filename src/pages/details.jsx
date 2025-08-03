@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useAtom } from "jotai";
 import { bookmarksAtom } from "../atom";
 
-import Pen from "../img/Pen.png";
+import Pen from "../img/pen.png";
 import Del from "../img/del.png";
 import Like from "../img/like.png";
 
